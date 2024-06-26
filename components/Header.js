@@ -13,7 +13,7 @@ export default function Header(props) {
       />
       {/* Texto de la cabecera */}
       <Text testID="mensaje" style={styles.headerText}>
-        Página de Andrés Gil
+        Página de Andres Gil Oliva
       </Text>
     </View>
   );
