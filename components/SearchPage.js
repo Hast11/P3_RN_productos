@@ -6,6 +6,7 @@ export default function SearchPage(props) {
   // Estados para los productos filtrados y el texto de búsqueda
   const [prodFiltrado, setProdFiltrado] = useState(props.theproducts); // Estado para almacenar los productos filtrados
   const [filtro, setfiltro] = useState(""); // Estado para almacenar el texto de búsqueda
+  const [visible, setVisible] = useState(true); // Estado para manejar la visibilidad del texto
 
   // Función para actualizar el texto de búsqueda
   const filtrar = (text) => {
@@ -52,6 +53,19 @@ export default function SearchPage(props) {
       <Text testID="catalogo" style={styles.boldText}>
         Catálogo
       </Text>
+
+      {/* Botón para alternar la visibilidad del texto */}
+      <Button
+        title="Toggle Text"
+        onPress={() => setVisible(!visible)}
+      />
+      {/* Texto que cambia su visibilidad */}
+      {visible && (
+        <Text style={{ marginVertical: 10 }}>
+          Este es un texto que puede hacerse invisible
+        </Text>
+      )}
+
       {/* Input de búsqueda */}
       <TextInput
         testID="filtro"
