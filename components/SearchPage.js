@@ -6,7 +6,7 @@ export default function SearchPage(props) {
   // Estados para los productos filtrados y el texto de búsqueda
   const [prodFiltrado, setProdFiltrado] = useState(props.theproducts); // Estado para almacenar los productos filtrados
   const [filtro, setfiltro] = useState(""); // Estado para almacenar el texto de búsqueda
-  const [visible, setVisible] = useState(true); // Estado para manejar la visibilidad del texto
+  const [visible, setVisible] = useState(false); // Estado para manejar la visibilidad del texto
 
   // Función para actualizar el texto de búsqueda
   const filtrar = (text) => {

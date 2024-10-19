@@ -4,6 +4,7 @@ import Header from './Header'; // Importa el componente Header
 import SearchPage from './SearchPage'; // Importa el componente SearchPage
 import { mockdata } from './constants/products.js'; // Importa datos simulados desde el archivo products.js
 import CONFIG from './config/config'; // Importa la configuración desde el archivo config
+import { Button } from 'react-native-web';
 
 // Componente funcional HomeScreen
 export default function HomeScreen(props) {
@@ -15,6 +16,7 @@ export default function HomeScreen(props) {
   // Estado para los productos y el indicador de carga (spinner)
   const [products, setproducts] = useState([]); // Estado para almacenar los productos
   const [loading, setLoading] = useState(true); // Estado para el indicador de carga
+  const [verImagen, setVerImagen] = useState(false);
 
   // Función para descargar los datos de productos
   const fetchProducts = async () => {
@@ -47,6 +49,7 @@ export default function HomeScreen(props) {
   return (
     <View style={styles.screen}>
       <Header /> {/* Renderiza el componente Header */}
+      
       {loading ? (
         <Image
           testID="loading"
